@@ -1,7 +1,7 @@
 function startApp() {
    
 
-  };
+};
   
   // ======= DO NOT EDIT ============== //
   export default startApp;

@@ -19,7 +19,61 @@
 				</h2>
 				<form action="#" id="form-content" class="form-content">
 					<div class="Full-name-group">
-         <!-- Atinuke's codes goes here -->
+            <div class="first-name-input form-box">
+							<div class="input-content-box">
+								<input
+									type="text"
+									name="first-name"
+									id="first-name"
+									placeholder="First Name"
+									autocomplete="off"
+								/>
+
+								<div id="error-icon1" class="hidden">
+									<img src="./icon-error.svg" alt="" />
+								</div>
+							</div>
+							<span id="ERROR_TEXT1" class="form__error-msg hidden"
+								>First name cannot be empty</span
+							>
+						</div>
+						<div class="last-name-input form-box">
+							<div class="input-content-box">
+								<input
+									type="text"
+									name="last-name"
+									id="last-name"
+									placeholder="Last Name"
+									autocomplete="off"
+								/>
+
+								<div id="error-icon2" class="hidden">
+									<img src="./icon-error.svg" alt="" />
+								</div>
+							</div>
+							<span id="ERROR_TEXT2" class="form__error-msg hidden"
+								>Last name cannot be empty</span
+							>
+						</div>
+					</div>
+
+					<div class="form__input-email form-box">
+						<div class="input-content-box">
+							<input
+								type="text"
+								name="email"
+								id="email"
+								placeholder="Email Address"
+								autocomplete="off"
+							/>
+
+							<div id="error-icon3" class="hidden">
+								<img src="./icon-error.svg" alt="" />
+							</div>
+						</div>
+						<span id="ERROR_TEXT3" class="form__error-msg hidden"
+							>looks like this is not an email</span
+						>
 					</div>
 
 					<div class="form__input-content">
