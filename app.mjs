@@ -36,7 +36,46 @@ const ETISALAT = ['809', '817', '818', '909', '908'];
    const AUTO = document.querySelector('.auto');
 
 function startApp() {
+  // Form Validation
+FORM.addEventListener('submit', (e) => {
+	e.preventDefault();
 
+   if (PHONE.value.length < 11) {
+		error = true;
+		count = 0;
+		ERROR_TEXT4.textContent = 'Phone number too short!!';
+		TRUE_ICON.src = './icon-error.svg';
+		ERROR_TEXT4.classList.remove('hidden');
+	}
+
+	if (FIRST_NAME.value === '') {
+		ERROR_ICON1.classList.remove('hidden');
+		ERROR_TEXT1.classList.remove('hidden');
+		error = true;
+	}
+
+	if (LAST_NAME.value === '') {
+		ERROR_ICON2.classList.remove('hidden');
+		ERROR_TEXT2.classList.remove('hidden');
+		error = true;
+	}
+
+	if (EMAIL.value === '') {
+		EMAIL.classList.add('invalid');
+		EMAIL.classList.add('place-holder');
+		EMAIL.placeholder = 'email@example/com';
+		ERROR_ICON3.classList.remove('hidden');
+		ERROR_TEXT3.classList.remove('hidden');
+		error = true;
+	}
+
+	if (!error) {
+		FIRST_NAME.value = '';
+		LAST_NAME.value = '';
+		EMAIL.value = '';
+		PHONE.value = '';
+	}
+});
 };
   
   // ======= DO NOT EDIT ============== //
