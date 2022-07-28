@@ -36,6 +36,59 @@ const ETISALAT = ['809', '817', '818', '909', '908'];
    const AUTO = document.querySelector('.auto');
 
 function startApp() {
+  
+  FIRST_NAME.addEventListener('input', () => {
+	if (FIRST_NAME.value === '') {
+		ERROR_ICON1.classList.remove('hidden');
+		ERROR_TEXT1.classList.remove('hidden');
+		error = true;
+	} else {
+		ERROR_ICON1.classList.add('hidden');
+		ERROR_TEXT1.classList.add('hidden');
+		error = false;
+	}
+});
+
+LAST_NAME.addEventListener('input', () => {
+	if (LAST_NAME.value === '') {
+		ERROR_ICON2.classList.remove('hidden');
+		ERROR_TEXT2.classList.remove('hidden');
+		error = true;
+	} else {
+		ERROR_ICON2.classList.add('hidden');
+		ERROR_TEXT2.classList.add('hidden');
+		error = false;
+	}
+});
+
+EMAIL.addEventListener('input', () => {
+	if (EMAIL.value === '') {
+		EMAIL.classList.add('invalid');
+		EMAIL.classList.add('place-holder');
+		EMAIL.placeholder = 'email@example.com';
+		ERROR_ICON3.classList.remove('hidden');
+		ERROR_TEXT3.classList.remove('hidden');
+		error = true;
+	} else {
+		const emailTestRe =
+			/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		var isValidEmail = emailTestRe.test(String(EMAIL.value).toLowerCase());
+
+		if (!isValidEmail) {
+			EMAIL.classList.add('invalid');
+			EMAIL.classList.add('place-holder');
+			EMAIL.placeholder = 'email@example/com';
+			ERROR_ICON3.classList.remove('hidden');
+			ERROR_TEXT3.classList.remove('hidden');
+			error = true;
+		} else {
+			EMAIL.classList.remove('invalid');
+			ERROR_ICON3.classList.add('hidden');
+			ERROR_TEXT3.classList.add('hidden');
+			error = false;
+		}
+	}
+});
   // Form Validation
 FORM.addEventListener('submit', (e) => {
 	e.preventDefault();
